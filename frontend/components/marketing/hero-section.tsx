@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, ShieldCheck, Sparkles, HeartPulse } from "lucide-react";
@@ -10,6 +11,7 @@ export function HeroSection() {
 
   return (
     <section className="relative isolate overflow-hidden bg-hero-gradient text-ivory">
+      <HeroBackgroundImage />
       <BackgroundLines />
 
       <div className="container-rw relative grid gap-12 px-5 pb-20 pt-12 sm:pb-28 sm:pt-16 md:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:pb-32 lg:pt-24">
@@ -137,6 +139,25 @@ function Pill({ icon, label }: { icon: React.ReactNode; label: string }) {
     <div className="flex items-center gap-2 rounded-full border border-ivory/15 bg-ivory/5 px-3.5 py-2 text-xs font-medium text-ivory/85 backdrop-blur">
       <span className="text-soft-gold">{icon}</span>
       <span>{label}</span>
+    </div>
+  );
+}
+
+function HeroBackgroundImage() {
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <Image
+        src="https://images.unsplash.com/photo-1759301252439-f4f5fb8d9f6c?fm=jpg&q=80&w=2400&auto=format&fit=crop"
+        alt=""
+        fill
+        priority
+        unoptimized
+        sizes="100vw"
+        className="object-cover object-center opacity-40"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-deep-forest/90 via-deep-forest/75 to-rooted-green/70" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(216,183,106,0.18),transparent_55%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/90 via-transparent to-deep-forest/40" />
     </div>
   );
 }
