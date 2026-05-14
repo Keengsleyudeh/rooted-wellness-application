@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, ShieldCheck, AlertTriangle, ScrollText, BookOpenCheck } from "lucide-react";
 import { SectionEyebrow } from "./section-eyebrow";
@@ -129,6 +130,7 @@ type LegalHeroProps = {
 function LegalHero({ document: doc, Icon }: LegalHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-hero-gradient text-ivory">
+      <LegalHeroBackgroundImage />
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(216,183,106,0.18),transparent_60%)]" />
         <div className="absolute -bottom-40 left-[-15%] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(168,191,164,0.18),transparent_60%)]" />
@@ -157,6 +159,25 @@ function LegalHero({ document: doc, Icon }: LegalHeroProps) {
 
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-ivory" />
     </section>
+  );
+}
+
+function LegalHeroBackgroundImage() {
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <Image
+        src="https://images.unsplash.com/photo-1725399633872-32ba508b0607?fm=jpg&q=80&w=2400&auto=format&fit=crop"
+        alt=""
+        fill
+        priority
+        unoptimized
+        sizes="100vw"
+        className="object-cover object-center opacity-20"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-deep-forest/92 via-deep-forest/80 to-rooted-green/70" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(216,183,106,0.16),transparent_55%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/85 via-transparent to-deep-forest/30" />
+    </div>
   );
 }
 

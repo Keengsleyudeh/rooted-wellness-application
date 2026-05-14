@@ -147,13 +147,13 @@ function HeroBackgroundImage() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1759301252439-f4f5fb8d9f6c?fm=jpg&q=80&w=2400&auto=format&fit=crop"
+        src="https://images.unsplash.com/photo-1727773458292-9da4284a4d3e?fm=jpg&q=80&w=2400&auto=format&fit=crop"
         alt=""
         fill
         priority
         unoptimized
         sizes="100vw"
-        className="object-cover object-center opacity-40"
+        className="object-cover object-center opacity-35"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-deep-forest/90 via-deep-forest/75 to-rooted-green/70" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(216,183,106,0.18),transparent_55%)]" />
